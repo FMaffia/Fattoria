@@ -13,18 +13,25 @@ import it.fattoria.model.concreti.Maiale;
 import it.fattoria.model.concreti.Mucca;
 import it.fattoria.model.concreti.Pecora;
 
-public class Contadino {
+public class Contadino
+{
 
-	public static void stilaResocontoAnimali(List<Animale> lista) {
-		String path = "C:\\Users\\Exolab\\Desktop\\resoconto.txt";
+	public static void stilaResocontoAnimali(List<Animale> lista)
+	{
+		String path = "d:\\resoconto.txt";
 		String resoconto = lista.toString();
-		try {
+		try
+		{
 			FileUtils.writeByteArrayToFile(new File(path), resoconto.getBytes());
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			e.printStackTrace();
 		}
 	}
-	public static List<Animale> radunaAnimali() {
+
+	public static List<Animale> radunaAnimali()
+	{
 		List<Animale> listaAnimali = new ArrayList<Animale>();
 		listaAnimali.add(Contadino.creaCavallo());
 		listaAnimali.add(Contadino.creaMucca());
@@ -36,22 +43,26 @@ public class Contadino {
 		return listaAnimali;
 	}
 
-	private static Maiale creaMaiale() {
+	private static Maiale creaMaiale()
+	{
 		Maiale maiale = new Maiale();
 		return maiale;
 	}
 
-	private static Mucca creaMucca() {
+	private static Mucca creaMucca()
+	{
 		Mucca mucca = new Mucca();
 		return mucca;
 	}
 
-	private static Pecora creaPecora() {
+	private static Pecora creaPecora()
+	{
 		Pecora pecora = new Pecora();
 		return pecora;
 	}
 
-	private static Cavallo creaCavallo() {
+	private static Cavallo creaCavallo()
+	{
 		Cavallo cavallo = new Cavallo();
 		return cavallo;
 	}
